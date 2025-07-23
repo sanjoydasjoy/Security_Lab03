@@ -304,16 +304,64 @@ No fixed-size key is enforced in HMAC. Key size does not matter in hash lenght. 
 
 ## Task 7: Bit Flip Hash Behavior
 
-We flipped the first bit in a file and compared hashes.
+We first created a file `bitflip.txt`
+
+```
+This is our program for bit flipping, we will use it to test our system
+```
+
+We opened the text file using `ghex`. For flipping the first we found the first hex `54`, we just changed it to `55`. We saved it to `bitflip2.txt`
+
+```
+Uhis is our program for bit flipping, we will use it to test our system
+```
+
+
+
+### Hashing unflipped
+
 
 ```bash
 # Original file
 openssl dgst -md5    bitflip.txt   > H1_md5.txt
 openssl dgst -sha256 bitflip.txt   > H1_sha256.txt
+```
 
+**H1_md5.txt**
+```
+MD5(bitflip.txt)= 46f20046ceddf9ee165839527343571d
+
+```
+
+
+**H1_sha256.txt**
+
+```
+SHA2-256(bitflip.txt)= 89b1eec67c7ef853fbbde34068b0a8bde454bb4b048a3350675f7b80bad2ac3c
+
+```
+
+### Hashing flipped: 
+
+
+```bash
 # After flipping first bit
 openssl dgst -md5    bitflip2.txt  > H2_md5.txt
 openssl dgst -sha256 bitflip2.txt  > H2_sha256.txt
+```
+
+**H2_md5.txt**
+```
+MD5(bitflip2.txt)= b765828ba608dffe8b50af9321cf1bf4
+
+```
+
+
+**H2_sha256.txt**
+
+```
+SHA2-256(bitflip2.txt)= 03ca3a3ecb8e31509f2df6aaa8a1941449d035ac23357cc88368f9c9c4e43757
+
 ```
 
 ### Observation:
@@ -331,21 +379,3 @@ openssl dgst -sha256 bitflip2.txt  > H2_sha256.txt
 <br>
 
 ---
-
-## Conclusion
-
-This lab helped solidify our understanding of encryption modes, the impact of ciphertext corruption, padding mechanisms, and the behavior of cryptographic hash functions. OpenSSL provided a powerful and flexible toolkit for these experiments.
-
----
-
-## Attachments
-
-* `plain.txt`, `cipher_*.bin`, `dec_*.txt`
-* `pic_ecb_fixed.bmp`, `pic_cbc_fixed.bmp`
-* `hashme.txt`, `hash_*.txt`, `hmac_*.txt`
-* `bitflip.txt`, `bitflip2.txt`, `H1_*.txt`, `H2_*.txt`
-* Screenshots of `ghex` edits and image results
-
----
-
-

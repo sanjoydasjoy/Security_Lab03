@@ -26,6 +26,10 @@ To practically explore symmetric encryption and hashing using OpenSSL and a hex 
 
 We encrypted a text file using three AES-128 modes: CBC, CFB, and OFB. Below are the commands used:
 
+1.first create a text file called `plain.txt` with some text.
+
+<img src="task1/1.png">
+
 ### Encryption Commands
 
 ```bash
@@ -42,6 +46,10 @@ openssl enc -aes-128-cfb -e -in plain.txt -out cipher_cfb.bin -K $KEY -iv $IV
 openssl enc -aes-128-ofb -e -in plain.txt -out cipher_ofb.bin -K $KEY -iv $IV
 ````
 
+**After these commends we should have the following encrypted files:**
+
+<img src="task1/2.png">
+
 ### Decryption Commands
 
 ```bash
@@ -49,6 +57,10 @@ openssl enc -aes-128-cbc -d -in cipher_cbc.bin -out plain_dec_cbc.txt -K $KEY -i
 openssl enc -aes-128-cfb -d -in cipher_cfb.bin -out plain_dec_cfb.txt -K $KEY -iv $IV
 openssl enc -aes-128-ofb -d -in cipher_ofb.bin -out plain_dec_ofb.txt -K $KEY -iv $IV
 ```
+
+**After these commends we should have the following decrypted files:**
+
+<img src="task1/3.png">
 
 <br>
 <br>

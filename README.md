@@ -4,20 +4,11 @@
 
 # CSE-478: Introduction to Computer Security  
 **Lab Report – Lab 3: Symmetric Encryption & Hashing**  
-**Submitted by:** [Your Name]  
-**Semester:** [e.g., Summer 2025]  
-**Institution:** [Your University Name]  
+**Submitted by:** AKM Fakhrul Hossain Mishal
 
 ---
-
-## Objective
-
-To practically explore symmetric encryption and hashing using OpenSSL and a hex editor like GHex in Ubuntu. The lab aims to provide hands-on experience with various encryption modes, one-way hash algorithms, HMAC, and data integrity concepts.
-
-<br>
-<br>
-
 ---
+
 
 <br>
 <br>
@@ -244,6 +235,31 @@ openssl dgst -sha256 hashme.txt    > hash_sha256.txt
 
 
 ### Observation:
+
+**Original (`hashme.txt`)**
+```
+Sample message for hashing.
+
+```
+
+**hash_md5.txt**
+```
+MD5(hashme.txt)= a92b6bcc12b30512db3ed4da13d98df5
+```
+
+**hash_sha1.txt**
+```
+SHA1(hashme.txt)= 62d4ba043d2afe396b8acd23caabe4f02d99b59c
+
+```
+
+**hash_sha256.txt**
+```
+SHA2-256(hashme.txt)= eb9cd4de722e5accd46a1f17cf682ed136cf5313714e57e336224d025dffa764
+
+```
+
+
 
 Each algorithm produced a different fixed-length hash. The stronger the algorithm (e.g., SHA-256), the longer the output and better the resistance to collisions.
 

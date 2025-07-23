@@ -216,7 +216,11 @@ ls -l
 
 ### Observations:
 
-* **ECB and CBC**: Require padding when plaintext size is not a multiple of block size.
+<img src="Task4/1.png">
+
+
+
+* **ECB and CBC**: Require padding when plaintext size is not a multiple of block size. Look here original file size is 66 but using padding it is 80.
 * **CFB and OFB**: Operate in streaming mode, so they do not require padding.
 
 <br>
@@ -236,6 +240,8 @@ openssl dgst -md5    hashme.txt    > hash_md5.txt
 openssl dgst -sha1   hashme.txt    > hash_sha1.txt
 openssl dgst -sha256 hashme.txt    > hash_sha256.txt
 ```
+
+
 
 ### Observation:
 

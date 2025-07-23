@@ -288,9 +288,11 @@ openssl dgst -sha1 -hmac "secretkey" hashme.txt > hmac_sha1.txt
 openssl dgst -sha256 -hmac "longersecretkey123" hashme.txt > hmac_sha256.txt
 ```
 
+<img src="Task6/1.png">
+
 ### Key Size Insight:
 
-No fixed-size key is enforced in HMAC. Internal padding is used if the key is shorter than the block size; if longer, it's hashed.
+No fixed-size key is enforced in HMAC. Key size does not matter in hash lenght. Internal padding is used if the key is shorter than the block size; if longer, it's hashed.
 
 <br>
 <br>

@@ -72,7 +72,11 @@ openssl enc -aes-128-ofb -d -in cipher_ofb.bin -out plain_dec_ofb.txt -K $KEY -i
 
 ## Task 2: ECB vs. CBC – Image Encryption Analysis
 
-A BMP image (`pic_original.bmp`) was encrypted using ECB and CBC modes. We then replaced the first 54 bytes of the encrypted image with the original BMP header using `ghex`.
+Download and save a BMP image (`pic_original.bmp`).
+
+<img scr="Task2/2.png">
+
+Then encrypt it.
 
 ### Encryption Commands
 
@@ -87,7 +91,14 @@ openssl enc -aes-128-ecb -e -in pic_original.bmp -out pic_ecb.bin -K $KEY -iv 00
 openssl enc -aes-128-cbc -e -in pic_original.bmp -out pic_cbc.bin -K $KEY -iv $IV
 ```
 
+A BMP image (`pic_original.bmp`) was encrypted using ECB and CBC modes. We then replaced the first 54 bytes of the encrypted image with the original BMP header using `ghex`.
+
+<img src="Task2/3.png">
+
+
 ### Observation
+
+<img src="Task2/1.png">
 
 * **ECB Mode:** Encrypted image still revealed visual patterns of the original picture. Block-based repetition preserved visible structure.
 * **CBC Mode:** Image was visually indistinguishable, indicating stronger diffusion and better confidentiality.

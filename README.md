@@ -310,6 +310,8 @@ We first created a file `bitflip.txt`
 This is our program for bit flipping, we will use it to test our system
 ```
 
+<img src="Task7/1.png">
+
 We opened the text file using `ghex`. For flipping the first we found the first hex `54`, we just changed it to `55`. We saved it to `bitflip2.txt`
 
 ```

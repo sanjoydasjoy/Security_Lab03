@@ -113,7 +113,14 @@ A BMP image (`pic_original.bmp`) was encrypted using ECB and CBC modes. We then 
 
 ## Task 3: Ciphertext Corruption Analysis
 
+Firstly we have created a text file called `long.txt`. 
+
+<img src="Task3/1.png">
+
 We encrypted a 64+ byte text file in four AES-128 modes and then manually flipped a bit at the 30th byte using `ghex`.
+
+
+
 
 ### Encryption Commands
 
@@ -127,6 +134,11 @@ openssl enc -aes-128-cfb -e -in long.txt -out long_cfb.bin -K $KEY -iv $IV
 openssl enc -aes-128-ofb -e -in long.txt -out long_ofb.bin -K $KEY -iv $IV
 ```
 
+### manually flipped a bit at the 30th byte using `ghex`.
+
+<img src="Task3/2.png">
+
+
 ### After Bit Corruption: Decryption Commands
 
 ```bash
@@ -136,11 +148,47 @@ openssl enc -aes-128-cfb -d -in long_cfb.bin -out dec_cfb.txt -K $KEY -iv $IV
 openssl enc -aes-128-ofb -d -in long_ofb.bin -out dec_ofb.txt -K $KEY -iv $IV
 ```
 
+
 ### Observations
+
+**Original Text**
+```
+This is a meaningful text, which we are using to test our system.
+
+```
+
+**ECB**
+```
+This is a meaninBkøÜÖn@Z¨q#x»“ we are using to test our system.
+
+```
+
+**CBC**
+```
+This is a meanin’Ô"á“e:ûFŒ¿¬'nú we are usingto test our system.
+
+```
+
+**CFB**
+```
+This is a meaningful text, whøchÆ¿å
+¬½ÜˆP¶"X; test our system.
+
+```
+
+**OFB**
+```
+This is a meaningful text, wh˜ch we are using to test our system.
+```
+
+
+
 
 * **ECB**: Only the corrupted block is affected. Others decrypt properly.
 * **CBC**: The corrupted block and the next one are affected.
-* **CFB & OFB**: Corruption propagates to a single byte or very limited range.
+* **CFB**: Corruption propagates to a range.
+* **OFB**: Corruption propagates to a single byte or very limited range.
+
 
 ### Conclusion
 

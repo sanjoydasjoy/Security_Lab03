@@ -4,7 +4,7 @@
 
 # CSE-478: Introduction to Computer Security  
 **Lab Report – Lab 3: Symmetric Encryption & Hashing**  
-**Submitted by:** AKM Fakhrul Hossain Mishal
+**Submitted To:** AKM Fakhrul Hossain Mishal
 
 ---
 ---

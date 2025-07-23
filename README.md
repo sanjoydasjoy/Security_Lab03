@@ -28,7 +28,7 @@ We encrypted a text file using three AES-128 modes: CBC, CFB, and OFB. Below are
 
 1.first create a text file called `plain.txt` with some text.
 
-<img src="task1/1.png">
+<img src="Task1/1.png">
 
 ### Encryption Commands
 
@@ -48,7 +48,7 @@ openssl enc -aes-128-ofb -e -in plain.txt -out cipher_ofb.bin -K $KEY -iv $IV
 
 **After these commends we should have the following encrypted files:**
 
-<img src="task1/2.png">
+<img src="Task1/2.png">
 
 ### Decryption Commands
 
@@ -60,7 +60,7 @@ openssl enc -aes-128-ofb -d -in cipher_ofb.bin -out plain_dec_ofb.txt -K $KEY -i
 
 **After these commends we should have the following decrypted files:**
 
-<img src="task1/3.png">
+<img src="Task1/3.png">
 
 <br>
 <br>
